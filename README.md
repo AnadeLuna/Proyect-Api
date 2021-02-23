@@ -37,12 +37,14 @@ The endpoints:
 - `/users/new/<name>/<age>/<sex>/<lookingfor>`: To create a new user.
 - `/message/new/<name>/<messa>/<match>` : To create a new message.
 
-2º Endpoints DELETE
+3º Endpoints DELETE
 
 - `/users/delete/<name>/<age>/<sex>/<lookingfor>` : To delete a user.
 - `/message/delete/<name>/<messa>/<match>` : To delete a message.
 
 -----------------------------------------
+
+# Files
 
 My database in mongodb is **Tinder** and the collections are **users** and **messages**.
 
