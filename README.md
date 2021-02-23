@@ -8,7 +8,7 @@ I´m doing the bootcamp of Data Analytics in [Ironchack](https://www.ironhack.co
 
 The objetive of this proyect is to demonstrate all i learned about [MongoDatabase](https://www.mongodb.com/es) and [Flask](https://flask.palletsprojects.com/en/1.1.x/).
 
-This project is focused on creating your own API. It´s will be able to receive information, store it, or serve it when needed.
+This project is focused on creating your own API. It´s will be able to receive information, store it, or serve it when needed. For Bonus we can do NLTK (sentiment analysis).
 
 In this project, I have practiced:
 
