@@ -12,7 +12,8 @@ app = Flask(__name__)
 #Welcome Funtion.
 @app.route("/")
 def root():
-    return "Hello, are you in Gossip Girl of Tinder."
+    return "Hello, you are in Gossip Girl of Tinder."
+
 
 #Functions that search the users collection.
 @app.route("/users")
@@ -24,6 +25,7 @@ def users():
 def user(name):
     data = read_one_users(name)
     return jsonify(data)
+
 
 
 #Functions that search the collection message.
@@ -43,6 +45,7 @@ def messag(messa):
     return jsonify(data)
 
 
+
 #Funtion to create users.
 @app.route("/users/new/<name>/<age>/<sex>/<lookingfor>")
 def insert_user(name,age,sex,lookingfor):
@@ -52,6 +55,7 @@ def insert_user(name,age,sex,lookingfor):
     else:
         insert_users(name,age,sex,lookingfor)
         return "The user has been created successfully."
+
 
 
 #Funtion to create message.
@@ -64,6 +68,9 @@ def insert_messages(name,messa,match):
         insert_message(name,messa,match)
         return "The message has been created successfully."
 
+
+
+
 #Funtion to delete users.
 @app.route("/users/delete/<name>/<age>/<sex>/<lookingfor>")
 def delet_user(name,age,sex,lookingfor):
@@ -74,8 +81,10 @@ def delet_user(name,age,sex,lookingfor):
     else:
         return "The user not exist. Test to remove an existing user."
 
+
+
 #Funtion to delete message.
-@app.route("/users/delete/<name>/<messa>/<match>")
+@app.route("/message/delete/<name>/<messa>/<match>")
 def delet_message(name,messa,match):
     data = read_one_message(messa)
     if len(data) > 0:

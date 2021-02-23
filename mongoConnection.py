@@ -4,7 +4,8 @@ client = MongoClient()
 users = client.Tinder.users
 message = client.Tinder.message 
 
-#Funciones que buscan en users collection.
+
+#Functions user's collection.
 def read_all_users():
     filt = {}
     proyect = {"_id":0}
@@ -17,8 +18,9 @@ def read_one_users(name):
     result = users.find(filt,proyect)
     return list(result)
 
-#Funciones que buscan en users message.
 
+
+#Functions message's collection.
 def read_all_message():
     filt = {}
     proyect = {"_id":0}
@@ -37,7 +39,9 @@ def read_one_message(messa):
     result = message.find(filt,proyect)
     return list(result)
 
-#Función que inserta usuarios.
+
+
+#Funtion to insert a user.
 def insert_users(name,age,sex,lookingfor):
     dic = {"Name":f"{name}",
       "Age":f"{age}",
@@ -45,14 +49,18 @@ def insert_users(name,age,sex,lookingfor):
       "Looking for":f"{lookingfor}"}
     return users.insert_one(dic)
 
-#Función que inserta mensajes.
+
+
+#Funtion to insert a user a message.
 def insert_message(name,messa,match):
     dic_mes = {"Name":f"{name}",
       "Message":f"{messa}",
       "Match":f"{match}"}
     return message.insert_one(dic_mes)
 
-#Función que elimina usuarios.
+
+
+#Funtion to delete a user.
 def delete_user(name,age,sex,lookingfor):
     dic = {"Name":f"{name}",
       "Age":f"{age}",
@@ -60,7 +68,9 @@ def delete_user(name,age,sex,lookingfor):
       "Looking for":f"{lookingfor}"}
     return users.remove(dic)
 
-#Función que elimina mensajes.
+
+
+#Funtion to delete a message.
 def delete_message(name,messa,match):
     dic_mes = {"Name":f"{name}",
       "Message":f"{messa}",
